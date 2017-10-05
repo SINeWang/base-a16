@@ -1,0 +1,65 @@
+buildscript {
+    dependencies {
+        classpath 'org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1'
+    }
+}
+
+plugins {
+    id 'pl.allegro.tech.build.axion-release' version '1.7.1'
+    id 'idea'
+}
+
+ext {
+    commonsCodecVersion = '1.10'
+    junitVersion = '4.12'
+    lombokVersion = '1.16.16'
+    slf4jVersion = '1.7.24'
+}
+
+scmVersion {
+    tag {
+        prefix = 'summer'
+    }
+}
+
+allprojects {
+    project.version = scmVersion.version
+    apply plugin: 'maven-publish-auth'
+
+    group = 'one.kii.codec'
+
+}
+
+subprojects {
+
+    buildscript {
+        dependencies {
+            classpath 'org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1'
+        }
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+        compile("org.slf4j:slf4j-api:${slf4jVersion}")
+
+        testCompile "junit:junit:${junitVersion}"
+        testCompile("org.slf4j:slf4j-simple:${slf4jVersion}")
+
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+
+}
