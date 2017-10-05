@@ -17,3 +17,5 @@ include 'services:webservice'
 
 rootProject.name = 'kii-codec'
 include 'base-a16'
+include 'random'
+
