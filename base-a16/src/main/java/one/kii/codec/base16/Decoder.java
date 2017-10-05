@@ -3,7 +3,25 @@ package one.kii.codec.base16;
 public class Decoder {
 
 
-    public static long decode(char digit) {
+    public static long decode(String value) {
+        if (value.length() == 0) {
+            return 0;
+        }
+        long result = 0;
+
+        char[] chars = value.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            long v = decode(chars[i]);
+            result += v;
+            if (i < chars.length - 1) {
+                result = result << 4;
+            }
+        }
+        return result;
+    }
+
+
+    private static long decode(char digit) {
         switch (digit) {
             case 'A':
             case 'a':
