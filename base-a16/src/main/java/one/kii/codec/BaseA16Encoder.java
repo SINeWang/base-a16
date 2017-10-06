@@ -5,7 +5,7 @@ public class BaseA16Encoder {
 
 
     private static final char[] CHARACTERS = {
-            'A', 'C', 'E', 'F', 'G', 'H', 'J', 'K', 'P', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'
+            'A', 'C', 'E', 'F', 'H', 'J', 'K', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'
     };
 
 
@@ -23,7 +23,6 @@ public class BaseA16Encoder {
 
         return buffer.toString();
     }
-
 
 
 }

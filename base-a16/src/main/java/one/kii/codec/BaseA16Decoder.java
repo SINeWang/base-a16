@@ -47,18 +47,17 @@ public class BaseA16Decoder {
             case 'h':
                 return 5;
 
-            case 'J':
-            case 'j':
-                return 6;
-
             case 'K':
             case 'k':
-                return 7;
+                return 6;
 
             case 'P':
             case 'p':
-                return 8;
+                return 7;
 
+            case 'Q':
+            case 'q':
+                return 8;
 
             case 'R':
             case 'r':
