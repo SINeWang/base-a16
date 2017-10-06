@@ -18,7 +18,7 @@ ext {
 
 scmVersion {
     tag {
-        prefix = ''
+        prefix = 'v'
     }
 }
 
