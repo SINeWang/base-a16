@@ -23,23 +23,34 @@ scmVersion {
 }
 
 allprojects {
-    project.version = scmVersion.version
+    group = 'one.kii.codec'
+
     apply plugin: 'maven-publish-auth'
 
-    group = 'one.kii.codec'
 
 }
 
 subprojects {
-
-    buildscript {
-        dependencies {
-            classpath 'org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1'
-        }
-    }
-
     apply plugin: 'java'
     apply plugin: 'maven'
+
+
+    apply plugin: 'pl.allegro.tech.build.axion-release'
+
+    scmVersion {
+        tag {
+            prefix = ''
+        }
+    }
+    project.version = scmVersion.version
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -54,12 +65,5 @@ subprojects {
 
     }
 
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                from components.java
-            }
-        }
-    }
 
 }
