@@ -1,4 +1,4 @@
-package one.kiii.codec.random;
+package one.kii.codec.random;
 
 import one.kii.codec.BaseA16Encoder;
 

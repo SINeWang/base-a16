@@ -1,6 +1,5 @@
 package one.kii.codec.random;
 
-import one.kiii.codec.random.BaseA16Random;
 import org.junit.Assert;
 import org.junit.Test;
 
