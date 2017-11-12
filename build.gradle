@@ -1,11 +1,5 @@
-buildscript {
-    dependencies {
-        classpath 'org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1'
-    }
-}
-
 plugins {
-    id 'pl.allegro.tech.build.axion-release' version '1.7.1'
+    id 'pl.allegro.tech.build.axion-release' version '1.8.1' apply false
     id 'idea'
 }
 
@@ -14,12 +8,6 @@ ext {
     junitVersion = '4.12'
     lombokVersion = '1.16.16'
     slf4jVersion = '1.7.24'
-}
-
-scmVersion {
-    tag {
-        prefix = ''
-    }
 }
 
 allprojects {
