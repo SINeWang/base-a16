@@ -13,7 +13,7 @@ ext {
 allprojects {
     group = 'one.kii.codec'
 
-    apply plugin: 'maven-publish-auth'
+    apply plugin: 'maven-publish'
 
     repositories {
         maven {
