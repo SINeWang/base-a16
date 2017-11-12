@@ -13,4 +13,12 @@ public class TestBaseA16Encoder {
         String s = BaseA16Encoder.encode(l);
         Assert.assertTrue(s.length() < 16);
     }
+
+    @Test
+    public void testEncoder() {
+        long l = 2461084393822224385L;
+        String s = BaseA16Encoder.encode(l);
+        Assert.assertEquals(l, BaseA16Decoder.decode(s));
+        System.out.println(s);
+    }
 }
